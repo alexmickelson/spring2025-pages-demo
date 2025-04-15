@@ -4,7 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script type="module" src="./service.js"></script>
+
+<script type="module">
+  import { fetchData } from './service.js';
+
+  async function callFetchData() {
+    const data = await fetchData();
+    document.body.innerHTML += `<p>Data from server: ${data}</p>`;
+  }
+
+  callFetchData();
+</script>
   </head>
   <body>
     <h1>made it here!!!</h1>
